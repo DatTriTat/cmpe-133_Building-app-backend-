@@ -15,7 +15,7 @@ const createNote = async (req, res) => {
             "title": title,
             "content":content,
         });
-        newNote.user = req.user.id;
+        newNote.user = req.user._id;
         await newNote.save();
         console.log(result);
         
