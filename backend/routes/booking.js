@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const noteController = require('../controllers/notesController');
+const appointmentController = require('../controllers/appointmentController');
 
-router.post('/', noteController.createNote);
+router.post('/', appointmentController.newAppointment);
 
 module.exports = router;

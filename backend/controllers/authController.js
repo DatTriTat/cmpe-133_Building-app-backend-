@@ -11,18 +11,6 @@ const handleLogin = async (req, res) => {
     // evaluate password 
     const match = await bcrypt.compare(pwd, foundUser.password);
     if (match) {
-        // create JWTs
-
-        /*const userForToken = {
-            email: foundUser.email,
-            id: foundUser._id,
-        }
-
-        const token = jwt.sign(userForToken, process.env.ACCESS_TOKEN_SECRET)
-
-        return res.status(200).send({ token, username: foundUser.username, email: foundUser.email })
-*/
-        
         const accessToken = jwt.sign(
             {
                 "UserInfo": {
@@ -30,7 +18,7 @@ const handleLogin = async (req, res) => {
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '30s' }
+            { expiresIn: '1d' }
         );
         const refreshToken = jwt.sign(
             { "email": foundUser.email },
@@ -44,7 +32,7 @@ const handleLogin = async (req, res) => {
 
         res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); //secure: true, 
         //res.json(foundUser)
-        res.json({ accessToken, username: foundUser.username, email: foundUser.email });
+        res.json({ accessToken, email: foundUser.email });
     } else {
         res.sendStatus(401);
     }

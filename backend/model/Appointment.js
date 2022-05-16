@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const userSchema = new Schema({
+const appointmentSchema = new Schema({
     username: {
         type: String,
         required: true
@@ -22,23 +22,24 @@ const userSchema = new Schema({
         required: true
     },
 
-    password: {
+    date: {
         type: String,
         required: true
     },
 
-    doctor: {
+    time: {
         type: String,
         required: true
     },
-    appointment: [
-        {
-            type: mongoose.Schema.Types.ObjectId, ref: 'Appointment'
-        }
-    ],
-    
-    
-    refreshToken: String
+
+    description: {
+        type: String,
+        required: true
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    },
+
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Appointment', appointmentSchema);
