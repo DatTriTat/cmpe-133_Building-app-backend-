@@ -1,0 +1,20 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const medicationSchema = new Schema({
+    symptoms: {
+        type: Array,
+    },
+    specificSymptoms: {
+        type: Array,
+    },
+    medications: {
+        type: String,
+    },
+    description: {
+        type: String,
+    }
+  
+});
+
+module.exports = mongoose.model('Medication', medicationSchema);

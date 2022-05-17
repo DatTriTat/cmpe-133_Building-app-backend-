@@ -36,6 +36,11 @@ const userSchema = new Schema({
             type: mongoose.Schema.Types.ObjectId, ref: 'Appointment'
         }
     ],
+    record: [
+        {
+            type: mongoose.Schema.Types.ObjectId, ref: 'Diagnosis'
+        }
+    ],
     
     
     refreshToken: String

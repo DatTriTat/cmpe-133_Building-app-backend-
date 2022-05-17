@@ -7,8 +7,7 @@ const handleLogin = async (req, res) => {
     if (!email || !pwd) return res.status(400).json({ 'message': 'Email and password are required.' });
 
     const foundUser = await User.findOne({ email: email }).exec();
-    if (!foundUser) return res.sendStatus(401); //Unauthorized 
-    // evaluate password 
+    if (!foundUser) return res.sendStatus(401); 
     const match = await bcrypt.compare(pwd, foundUser.password);
     if (match) {
         const accessToken = jwt.sign(
@@ -25,13 +24,11 @@ const handleLogin = async (req, res) => {
             process.env.REFRESH_TOKEN_SECRET,
             { expiresIn: '1d' }
         );
-        // Saving refreshToken with current user
         foundUser.refreshToken = refreshToken;
         const result = await foundUser.save();
         console.log(result);
 
-        res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); //secure: true, 
-        //res.json(foundUser)
+        res.cookie('jwt', refreshToken, { httpOnly: true, secure: true ,sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 }); //, 
         res.json({ accessToken, email: foundUser.email });
     } else {
         res.sendStatus(401);

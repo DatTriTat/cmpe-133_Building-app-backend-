@@ -1,4 +1,3 @@
-const bcrypt = require('bcrypt');
 const Appointment = require('../model/Appointment');
 const User = require('../model/User');
 
@@ -10,7 +9,6 @@ const newAppointment = async (req, res) => {
             message: 'Unauthorized'
         })
     
-        //create and store the new user
         const newAppointment = await Appointment({
             "username": username,
             "age":age,
@@ -24,7 +22,7 @@ const newAppointment = async (req, res) => {
         const save = await newAppointment.save()
         user.appointment = user.appointment.concat(save._id)
         await user.save()
-        console.log(save);
+        console.log(newAppointment);
         
         res.status(201).json({ 'success': `New user ${newAppointment} created!` });
     } catch (err) {

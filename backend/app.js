@@ -44,9 +44,12 @@ app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/refresh', require('./routes/refresh'));
 app.use('/logout', require('./routes/logout'));
+app.use('/medications', require('./routes/api/medications'));
 
 app.use(verifyJWT);
 app.use('/appointment', require('./routes/booking'));
+app.use('/diagnosed', require('./routes/diagnosis'));
+
 
 
 app.all('*', (req, res) => {

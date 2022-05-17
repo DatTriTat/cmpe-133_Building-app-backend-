@@ -23,3 +23,18 @@
 20220515	22:41:17	1cd4cc05-920f-4990-96a3-0b43a8bd43bd	TokenExpiredError: jwt expired
 20220515	22:44:23	411d49fc-1b6b-41ed-b847-2997535c677c	TokenExpiredError: jwt expired
 20220516	01:43:02	e6c3a446-dd37-4f37-ba5d-aa3c7244a4f0	JsonWebTokenError: jwt malformed
+20220516	03:10:36	696761e2-bdb9-4a34-86c9-48bcdf20f356	Error: Not allowed by CORS
+20220516	03:11:10	2b492676-7fba-4db5-97d4-132fde54fb76	Error: Not allowed by CORS
+20220516	03:11:11	22bd5c5c-013b-4006-b47e-ed679a34f2b5	Error: Not allowed by CORS
+20220516	03:11:29	f702daa6-8c6f-4942-98c1-111d829c405a	Error: Not allowed by CORS
+20220517	02:48:03	38f8d3ad-26d0-405f-8e4e-439ddb77ff4a	JsonWebTokenError: jwt malformed
+20220517	02:49:37	af450ea9-596a-4ca6-87a3-974c7ac4647a	JsonWebTokenError: jwt malformed
+20220517	02:52:31	69bf0648-4f07-4a08-aa76-f53891792af6	JsonWebTokenError: jwt malformed
+20220517	02:53:12	24438636-eac4-45f5-8244-72322b71300e	JsonWebTokenError: jwt malformed
+20220517	03:12:40	85ef6679-74b3-45ab-81f2-b66adbce50af	JsonWebTokenError: jwt malformed
+20220517	03:18:32	812fd619-9d19-4e9d-a750-72ffb941319d	JsonWebTokenError: jwt malformed
+20220517	03:22:04	892ba3c9-d398-4c53-8e83-09e92acf3480	JsonWebTokenError: jwt malformed
+20220517	03:37:45	c55bed89-c04b-4781-b645-19d830d218a6	TokenExpiredError: jwt expired
+20220517	03:38:40	7985a9c4-d713-4183-8d5d-46118c088185	TokenExpiredError: jwt expired
+20220517	03:40:38	0165a51e-1681-460c-8a20-641daa1c3d21	TokenExpiredError: jwt expired
+20220517	12:17:32	c343c7dc-2397-489c-b677-9646259f05c5	SyntaxError: Unexpected end of JSON input
